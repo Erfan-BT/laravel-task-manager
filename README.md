@@ -9,6 +9,7 @@ A simple Task Management application built with **Laravel**, **Blade**, **Eloque
 * Edit an existing task
 * Delete a task
 * Toggle task status between:
+
   * Not Done
   * Done
 * Form validation
@@ -41,8 +42,8 @@ Before running the project, make sure you have:
 ### 1. Clone the project
 
 ```bash
-git clone <repository-url>
-cd task-project
+git clone https://github.com/Erfan-BT/laravel-task-manager.git
+cd laravel-task-manager
 ```
 
 ### 2. Install PHP dependencies
@@ -59,13 +60,15 @@ npm install
 
 ### 4. Configure environment
 
-Create a `.env` file from `.env.example`:
+Create a `.env` file by copying `.env.example`.
+
+On Windows:
 
 ```bash
-cp .env.example .env
+copy .env.example .env
 ```
 
-Then configure your database:
+Then configure the database in `.env`:
 
 ```env
 DB_DATABASE=task-project
@@ -85,17 +88,17 @@ php artisan key:generate
 php artisan migrate
 ```
 
-### 7. Build frontend assets
-
-For development:
+### 7. Start frontend development server
 
 ```bash
 npm run dev
 ```
 
+Keep this terminal running.
+
 ### 8. Start Laravel server
 
-In another terminal:
+Open another terminal and run:
 
 ```bash
 php artisan serve
@@ -118,25 +121,26 @@ app/
 │       ├── StoreTaskRequest.php
 │       └── UpdateTaskRequest.php
 │
-├── Models/
-│   └── Task.php
-│
+└── Models/
+    └── Task.php
+
 resources/
 ├── views/
 │   ├── layouts/
-│   │   └── app.blade.php
-|   |   └── header.blade.php 
+│   │   ├── app.blade.php
+│   │   └── header.blade.php
 │   └── tasks/
 │       ├── index.blade.php
 │       ├── add-task-modal.blade.php
-|       └── edit-task-modal.blade.php
+│       └── edit-task-modal.blade.php
 │
-└── js/tasks
-    ├── add-task.js
-    ├── edit-task.js
-    ├── toggle-task.js
-    ├── delete-task.js
-    └── btns-event-listener.js
+└── js/
+    └── tasks/
+        ├── add-task.js
+        ├── edit-task.js
+        ├── toggle-task.js
+        ├── delete-task.js
+        └── btns-event-listener.js
 
 database/
 └── migrations/
@@ -171,4 +175,5 @@ Validation errors are returned and displayed in the frontend.
 ## Notes
 
 The application uses Laravel Route Model Binding for task-related routes and Eloquent ORM for database operations.
+
 Bootstrap is used for the UI components, including forms, buttons, cards, and modals.
