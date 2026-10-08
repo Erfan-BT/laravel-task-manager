@@ -4,11 +4,25 @@
 
 ## امکانات
 
+<<<<<<< HEAD
 * نمایش لیست وظایف
 * ایجاد وظیفه جدید
 * ویرایش وظیفه
 * حذف وظیفه
 * تغییر وضعیت وظیفه بین:
+=======
+* View all tasks
+* Create a new task
+* Edit an existing task
+* Delete a task
+* Toggle task status between:
+
+  * Not Done
+  * Done
+* Form validation
+* AJAX-based CRUD operations
+* Responsive UI using Bootstrap
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
 
   * انجام نشده
   * انجام شده
@@ -60,15 +74,25 @@ npm install
 
 ### 4. تنظیم Environment
 
+<<<<<<< HEAD
 فایل `.env` را با استفاده از `.env.example` ایجاد کنید.
 
 در Windows:
+=======
+Create a `.env` file by copying `.env.example`.
+
+On Windows:
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
 
 ```bash
 copy .env.example .env
 ```
 
+<<<<<<< HEAD
 سپس اطلاعات دیتابیس را در فایل `.env` تنظیم کنید:
+=======
+Then configure the database in `.env`:
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
 
 ```env
 DB_DATABASE=task-project
@@ -88,19 +112,31 @@ php artisan key:generate
 php artisan migrate
 ```
 
+<<<<<<< HEAD
 ### 7. اجرای Vite
 
 برای اجرای بخش Frontend:
+=======
+### 7. Start frontend development server
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
 
 ```bash
 npm run dev
 ```
 
+<<<<<<< HEAD
 این Terminal را باز نگه دارید.
 
 ### 8. اجرای سرور Laravel
 
 یک Terminal دیگر باز کرده و اجرا کنید:
+=======
+Keep this terminal running.
+
+### 8. Start Laravel server
+
+Open another terminal and run:
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
 
 ```bash
 php artisan serve
@@ -176,6 +212,12 @@ routes/
 
 ## نکات
 
+<<<<<<< HEAD
 در این پروژه برای Routeهای مربوط به Task از **Laravel Route Model Binding** و برای عملیات دیتابیس از **Eloquent ORM** استفاده شده است.
 
 همچنین Bootstrap برای طراحی رابط کاربری و ایجاد فرم‌ها، دکمه‌ها، کارت‌ها و Modalها استفاده شده است.
+=======
+The application uses Laravel Route Model Binding for task-related routes and Eloquent ORM for database operations.
+
+Bootstrap is used for the UI components, including forms, buttons, cards, and modals.
+>>>>>>> f322f8bde18f7881ab097ee513e6aa9ec2577fc0
