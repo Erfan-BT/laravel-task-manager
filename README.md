@@ -1,21 +1,22 @@
 # Task Manager
 
-A simple Task Management application built with **Laravel**, **Blade**, **Eloquent ORM**, **Bootstrap**, and **AJAX**.
+یک پروژه ساده مدیریت وظایف (Task Manager) که با استفاده از **Laravel**، **Blade**، **Eloquent ORM**، **Bootstrap** و **AJAX** توسعه داده شده است.
 
-## Features
+## امکانات
 
-* View all tasks
-* Create a new task
-* Edit an existing task
-* Delete a task
-* Toggle task status between:
-  * Not Done
-  * Done
-* Form validation
-* AJAX-based CRUD operations
-* Responsive UI using Bootstrap
+* نمایش لیست وظایف
+* ایجاد وظیفه جدید
+* ویرایش وظیفه
+* حذف وظیفه
+* تغییر وضعیت وظیفه بین:
 
-## Technologies
+  * انجام نشده
+  * انجام شده
+* اعتبارسنجی اطلاعات
+* انجام عملیات CRUD به صورت AJAX
+* رابط کاربری واکنش‌گرا با Bootstrap
+
+## تکنولوژی‌های استفاده شده
 
 * PHP
 * Laravel
@@ -27,45 +28,47 @@ A simple Task Management application built with **Laravel**, **Blade**, **Eloque
 * Fetch API / AJAX
 * Vite
 
-## Requirements
+## پیش‌نیازها
 
-Before running the project, make sure you have:
+قبل از اجرای پروژه، موارد زیر باید روی سیستم نصب باشند:
 
 * PHP 8.2+
 * Composer
 * MySQL
-* Node.js & npm
+* Node.js و npm
 
-## Installation
+## نصب و اجرا
 
-### 1. Clone the project
+### 1. دریافت پروژه
 
 ```bash
-git clone <repository-url>
-cd task-project
+git clone https://github.com/Erfan-BT/laravel-task-manager.git
+cd laravel-task-manager
 ```
 
-### 2. Install PHP dependencies
+### 2. نصب وابستگی‌های PHP
 
 ```bash
 composer install
 ```
 
-### 3. Install JavaScript dependencies
+### 3. نصب وابستگی‌های JavaScript
 
 ```bash
 npm install
 ```
 
-### 4. Configure environment
+### 4. تنظیم Environment
 
-Create a `.env` file from `.env.example`:
+فایل `.env` را با استفاده از `.env.example` ایجاد کنید.
+
+در Windows:
 
 ```bash
-cp .env.example .env
+copy .env.example .env
 ```
 
-Then configure your database:
+سپس اطلاعات دیتابیس را در فایل `.env` تنظیم کنید:
 
 ```env
 DB_DATABASE=task-project
@@ -73,41 +76,43 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 5. Generate application key
+### 5. ایجاد Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 6. Run migrations
+### 6. اجرای Migration
 
 ```bash
 php artisan migrate
 ```
 
-### 7. Build frontend assets
+### 7. اجرای Vite
 
-For development:
+برای اجرای بخش Frontend:
 
 ```bash
 npm run dev
 ```
 
-### 8. Start Laravel server
+این Terminal را باز نگه دارید.
 
-In another terminal:
+### 8. اجرای سرور Laravel
+
+یک Terminal دیگر باز کرده و اجرا کنید:
 
 ```bash
 php artisan serve
 ```
 
-The application will be available at:
+سپس پروژه از طریق آدرس زیر قابل دسترسی خواهد بود:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-## Project Structure
+## ساختار اصلی پروژه
 
 ```text
 app/
@@ -118,25 +123,26 @@ app/
 │       ├── StoreTaskRequest.php
 │       └── UpdateTaskRequest.php
 │
-├── Models/
-│   └── Task.php
-│
+└── Models/
+    └── Task.php
+
 resources/
 ├── views/
 │   ├── layouts/
-│   │   └── app.blade.php
-|   |   └── header.blade.php 
+│   │   ├── app.blade.php
+│   │   └── header.blade.php
 │   └── tasks/
 │       ├── index.blade.php
 │       ├── add-task-modal.blade.php
-|       └── edit-task-modal.blade.php
+│       └── edit-task-modal.blade.php
 │
-└── js/tasks
-    ├── add-task.js
-    ├── edit-task.js
-    ├── toggle-task.js
-    ├── delete-task.js
-    └── btns-event-listener.js
+└── js/
+    └── tasks/
+        ├── add-task.js
+        ├── edit-task.js
+        ├── toggle-task.js
+        ├── delete-task.js
+        └── btns-event-listener.js
 
 database/
 └── migrations/
@@ -148,27 +154,28 @@ routes/
 
 ## AJAX
 
-Task operations are handled asynchronously using the JavaScript Fetch API.
+عملیات مربوط به Taskها با استفاده از **Fetch API** به صورت AJAX انجام می‌شوند.
 
-The following operations use AJAX:
+عملیات زیر بدون Reload شدن کامل صفحه انجام می‌شوند:
 
-* Create Task
-* Edit Task
-* Delete Task
-* Toggle Task Status
+* ایجاد Task
+* ویرایش Task
+* حذف Task
+* تغییر وضعیت Task
 
-This allows the task list to be updated without reloading the entire page.
+این کار باعث می‌شود لیست Taskها بدون بارگذاری مجدد صفحه به‌روزرسانی شود.
 
-## Validation
+## اعتبارسنجی
 
-Task creation and editing use Laravel Form Requests:
+برای ایجاد و ویرایش Taskها از Laravel Form Request استفاده شده است:
 
 * `StoreTaskRequest`
 * `UpdateTaskRequest`
 
-Validation errors are returned and displayed in the frontend.
+خطاهای اعتبارسنجی دریافت شده و در رابط کاربری نمایش داده می‌شوند.
 
-## Notes
+## نکات
 
-The application uses Laravel Route Model Binding for task-related routes and Eloquent ORM for database operations.
-Bootstrap is used for the UI components, including forms, buttons, cards, and modals.
+در این پروژه برای Routeهای مربوط به Task از **Laravel Route Model Binding** و برای عملیات دیتابیس از **Eloquent ORM** استفاده شده است.
+
+همچنین Bootstrap برای طراحی رابط کاربری و ایجاد فرم‌ها، دکمه‌ها، کارت‌ها و Modalها استفاده شده است.
